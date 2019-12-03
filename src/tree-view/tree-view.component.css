@@ -1,0 +1,7 @@
+.node-item{
+    height: 25px;
+    background: gray;
+}
+.tree-hide{
+    display:none;
+}

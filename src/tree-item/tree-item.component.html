@@ -1,0 +1,13 @@
+<div class="tree-item" [ngClass]="{'tree-hide': !showing}" (keypress)="keyPress($event)">
+  <div (click)="expandItem()">
+  <span class="tree-expan-icon" *ngIf="!!data.childrens && data.childrens.length>0">icon</span>
+  <span class="tree-select-icon" *ngIf="config.showSelect">select</span>
+  <span class="tree-content">{{data.name}}</span>
+</div>
+  <div [ngClass]="{'expanded': state.isExpanded}" class="children" *ngIf="!!data" >
+    <div  *ngFor="let child of data.childrens"  >
+      <app-tree-item [data]="child" #childrens [showing]="false" ></app-tree-item>
+    </div>
+  </div>
+  
+</div>
